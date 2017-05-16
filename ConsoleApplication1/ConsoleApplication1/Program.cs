@@ -35,20 +35,21 @@ namespace ConsoleApplication1 {
 			if (!isValid) {
 				Console.WriteLine("Usage:");
 				Console.WriteLine($" ConsoleApplication1 {START_PARAMETER}startingInteger {END_PARAMETER}endingInteger");
+				Console.WriteLine($"       {START_PARAMETER}startingInteger  = required. startingInteger is the starting integer (inclusive).");
+				Console.WriteLine($"       {END_PARAMETER}endingInteger  = required. endingInteger is the ending integer (inclusive).");
+			}
+			else {
+				string configListString = Utility.RequiredAppSetting("configList");
+				var inputConfiguration = JsonConvert.DeserializeObject<InputConfiguration>(configListString);
 
-				Console.ReadLine();
-				return;
+				var proc = new NumberProcessor();
+				proc.Process(startNumber.Value, endNumber.Value, inputConfiguration);
 			}
 
-
-			string configListString = Utility.RequiredAppSetting("configList");
-			var inputConfiguration = JsonConvert.DeserializeObject<InputConfiguration>(configListString);
-
-			var proc = new NumberProcessor();
-			proc.Process(startNumber.Value, endNumber.Value, inputConfiguration);
-
-			Console.WriteLine("Noel Tiangco");
+			Console.WriteLine();
+			Console.WriteLine("by Noel Tiangco. Press any key to end.");
 			Console.ReadLine();
+			return;
 		}
 
 		private static void ExtractArgument(string arg, string prefix, ref int? target, ref bool isValid) {
