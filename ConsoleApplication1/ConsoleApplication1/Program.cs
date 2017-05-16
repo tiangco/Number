@@ -37,6 +37,8 @@ namespace ConsoleApplication1 {
 				Console.WriteLine($" ConsoleApplication1 {START_PARAMETER}startingInteger {END_PARAMETER}endingInteger");
 				Console.WriteLine($"       {START_PARAMETER}startingInteger  = required. startingInteger is the starting integer (inclusive).");
 				Console.WriteLine($"       {END_PARAMETER}endingInteger  = required. endingInteger is the ending integer (inclusive).");
+				Console.WriteLine();
+				Console.WriteLine($"Example: ConsoleApplication1 {START_PARAMETER}4 {END_PARAMETER}40");
 			}
 			else {
 				string configListString = Utility.RequiredAppSetting("configList");
@@ -47,7 +49,7 @@ namespace ConsoleApplication1 {
 			}
 
 			Console.WriteLine();
-			Console.WriteLine("by Noel Tiangco. Press any key to end.");
+			Console.WriteLine("by Noel Tiangco. Press [Enter] to end.");
 			Console.ReadLine();
 			return;
 		}
