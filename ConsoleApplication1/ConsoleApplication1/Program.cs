@@ -34,7 +34,7 @@ namespace ConsoleApplication1 {
 
 			if (!isValid) {
 				Console.WriteLine( "Usage:");
-				Console.WriteLine($" ConsoleApplication1 {START_PARAMETER}(startingInteger) {END_PARAMETER}(endingInteger)");
+				Console.WriteLine($" Number {START_PARAMETER}(startingInteger) {END_PARAMETER}(endingInteger)");
 				Console.WriteLine( "     startingInteger  The starting integer of the range (inclusive).");
 				Console.WriteLine( "     endingInteger    The ending integer of the range (inclusive).");
 				Console.WriteLine();
