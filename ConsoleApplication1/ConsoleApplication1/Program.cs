@@ -20,25 +20,25 @@ namespace ConsoleApplication1 {
 
 			if (startNumber == null) {
 				isValid = false;
-				Console.WriteLine($"{START_PARAMETER} parameter is required.");
+				Console.WriteLine($"{START_PARAMETER} argument is required.");
 			}
 			if (endNumber == null) {
 				isValid = false;
-				Console.WriteLine($"{END_PARAMETER} parameter is required.");
+				Console.WriteLine($"{END_PARAMETER} argument is required.");
 			}
 
 			if (isValid && startNumber > endNumber) {
 				isValid = false;
-				Console.WriteLine($"{START_PARAMETER} {startNumber} must be less than the {END_PARAMETER} {endNumber}");
+				Console.WriteLine($"{START_PARAMETER} {startNumber} must be less than the {END_PARAMETER} {endNumber}.");
 			}
 
 			if (!isValid) {
-				Console.WriteLine("Usage:");
-				Console.WriteLine($" ConsoleApplication1 {START_PARAMETER}startingInteger {END_PARAMETER}endingInteger");
-				Console.WriteLine($"       {START_PARAMETER}startingInteger  = required. startingInteger is the starting integer (inclusive).");
-				Console.WriteLine($"       {END_PARAMETER}endingInteger  = required. endingInteger is the ending integer (inclusive).");
+				Console.WriteLine( "Usage:");
+				Console.WriteLine($" ConsoleApplication1 {START_PARAMETER}(startingInteger) {END_PARAMETER}(endingInteger)");
+				Console.WriteLine( "     startingInteger  The starting integer of the range (inclusive).");
+				Console.WriteLine( "     endingInteger    The ending integer of the range (inclusive).");
 				Console.WriteLine();
-				Console.WriteLine($"Example: ConsoleApplication1 {START_PARAMETER}4 {END_PARAMETER}40");
+				Console.WriteLine($" Example: Number {START_PARAMETER}4 {END_PARAMETER}40");
 			}
 			else {
 				string configListString = Utility.RequiredAppSetting("configList");
